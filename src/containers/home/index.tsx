@@ -8,34 +8,26 @@ to Sofaster!`;
 
 const imageUrl = '../../assets/images/sofaster_welcome_screen.png';
 
-const HomeContainer = styled.SafeAreaView`
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-`;
-
 const HomeBackgroundImage = styled.ImageBackground`
   flex: 1;
   resize-mode: contain;
-  justify-content: center;
-  align-items: stretch;
+  flex-direction: column;
 `;
 
 const TextContainer = styled.View`
-  flex: 1;
-  margin-top: 50px;
+  flex: 2;
+  padding-top: 50px;
 `;
 
 const ButtonsContainer = styled.View`
-  flex: 2;
+  flex: 3;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 100px;
+  justify-content: flex-end;
+  padding: 20px 100px;
 `;
 
 export default () => {
   return (
-    <HomeContainer>
       <HomeBackgroundImage source={require(imageUrl)}>
         <TextContainer>
           <Text
@@ -59,6 +51,5 @@ export default () => {
           </ButtonsContainer>
         </TextContainer>
       </HomeBackgroundImage>
-    </HomeContainer>
   );
 };

@@ -8,12 +8,13 @@ const ButtonContainer = styled.TouchableOpacity`
   position: relative;
   width: 100%;
   padding: 15px 0;
-  border-radius: 2px;
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 10px;
+  elevation: 5px;
 
   ${ifProp(
     'color',
