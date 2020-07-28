@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {Button, Text} from '../../components';
-import {TextFontWeight, TextAligns, AlignItems, Colors} from '../../enum/index';
+import { Button, Text } from '../../components';
+import { TextFontWeight, TextAligns, Colors } from '../../enum/index';
+import { COMMON_ROUTES } from '../../constants/routes';
+
 
 const welcomeText = `Welcome
 to Sofaster!`;
@@ -26,7 +28,12 @@ const ButtonsContainer = styled.View`
   padding: 20px 100px;
 `;
 
-export default () => {
+export default ({ navigation }) => {
+
+  const navigateTo = (param) => (
+    navigation.navigate(param)
+  )
+
   return (
       <HomeBackgroundImage source={require(imageUrl)}>
         <TextContainer>
@@ -42,11 +49,13 @@ export default () => {
               text={'Login'}
               textColor={Colors.WHITE}
               color={Colors.CRIMSON}
+              onPress={()=>navigateTo(COMMON_ROUTES.LOG_IN)}
             />
             <Button
               text={'Sign up'}
               color={Colors.WHITE}
               textColor={Colors.BLACK}
+              onPress={()=>navigateTo(COMMON_ROUTES.SIGN_UP)}
             />
           </ButtonsContainer>
         </TextContainer>

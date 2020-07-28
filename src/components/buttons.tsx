@@ -14,7 +14,7 @@ const ButtonContainer = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: center;
   margin-bottom: 10px;
-  elevation: 5px;
+  elevation: ${5};
 
   ${ifProp(
     'color',
@@ -24,10 +24,10 @@ const ButtonContainer = styled.TouchableOpacity`
   )};
 `;
 
-export const Button = ({text, textColor, color}) => {
+export const Button = ({ text, textColor, color, onPress, }) => {
   return (
-    <ButtonContainer color={color}>
-      <Text color={textColor}>{text}</Text>
+    <ButtonContainer color={ color } onPress={ onPress }>
+      <Text color={ textColor }>{ text }</Text>
     </ButtonContainer>
   );
 };
